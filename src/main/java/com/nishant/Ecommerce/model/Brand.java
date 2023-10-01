@@ -1,0 +1,30 @@
+package com.nishant.Ecommerce.model;
+
+public enum Brand {
+    NIKE,
+    COCA_COLA,
+    APPLE,
+    SAMSUNG,
+    TOYOTA,
+    FORD,
+    HONDA,
+    BMW,
+    GOOGLE,
+    MICROSOFT,
+    AMAZON,
+    SONY,
+    LG,
+    ADIDAS,
+    GUCCI,
+    CHANEL,
+    LENOVO,
+    DELL,
+    ACER,
+    ASUS,
+    XIAOMI,
+    HUAWEI,
+    OPPO,
+    VIVO,
+    ONEPLUS,
+    OTHER
+}
