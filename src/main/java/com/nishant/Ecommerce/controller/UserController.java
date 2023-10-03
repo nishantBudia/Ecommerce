@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -20,8 +22,8 @@ public class UserController {
      */
 
     @PostMapping()
-    public String addUser(@RequestBody @Valid User user){
-        return service.addUser(user);
+    public String addUser(@RequestBody @Valid ArrayList<User> users){
+        return service.addUser(users);
     }
 
 }

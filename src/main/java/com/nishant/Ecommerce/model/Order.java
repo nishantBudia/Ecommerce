@@ -1,16 +1,19 @@
 package com.nishant.Ecommerce.model;
 
+import com.nishant.Ecommerce.utils.SameLength;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
 @Validated
 @Table(name = "Orders")
+@SameLength(fields = {"products","productQuantity"})
 public class Order {
     @Id
     @GeneratedValue
@@ -22,12 +25,12 @@ public class Order {
 
     @ManyToMany(targetEntity = Product.class)
     @NotNull
-    ArrayList<Product> products;
+    List<Product> products;
 
-    @ManyToMany(targetEntity = Address.class)
+    @ManyToOne(targetEntity = Address.class)
     @NotNull
-    ArrayList<Address> address;
+    Address address;
 
     @NotNull
-    ArrayList<Integer> productQuantity;
+    List<Integer> productQuantity;
 }

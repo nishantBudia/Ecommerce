@@ -5,12 +5,17 @@ import com.nishant.Ecommerce.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class ProductService {
     @Autowired
     ProductRepo repo;
 
-    public String addProduct(Product product) {
-        return repo.save(product).toString();
+    public String addProduct(ArrayList<Product> products) {
+        products.forEach((product)->{
+            product.setId(null);
+        });
+        return repo.saveAll(products).toString();
     }
 }

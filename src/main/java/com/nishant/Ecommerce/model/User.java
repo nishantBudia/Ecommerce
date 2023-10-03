@@ -29,6 +29,6 @@ public class User {
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{5,20}$")
     String password;
 
-    @Pattern(regexp = "^\\d{10}$\n")
+    @Pattern(regexp = "^\\d{10}")
     String phoneNumber;
 }

@@ -10,6 +10,7 @@ public class AddressService {
     @Autowired
     AddressRepo repo;
     public String addService(Address address) {
+        address.setId(null);
         return repo.save(address).toString();
     }
 }

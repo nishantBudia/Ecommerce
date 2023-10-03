@@ -1,8 +1,6 @@
 package com.nishant.Ecommerce.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,11 +22,13 @@ public class Product {
     @NotNull
     Integer price;
 
-    @Size(min = 50)
+    @Size(min = 5)
     String description;
 
+    @Enumerated(value = EnumType.STRING)
     Category category;
 
+    @Enumerated(value = EnumType.STRING)
     Brand brand;
 
 }

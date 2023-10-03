@@ -9,6 +9,7 @@ import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Validated
@@ -23,17 +24,17 @@ public class Address {
 
     String landmark;
 
-    @Pattern(regexp = "^\\d{10}$\n")
+    @Pattern(regexp = "^\\d{10}")
     String phoneNumber;
 
-    @Pattern(regexp = "^\\d{6}$\n")
+    @Pattern(regexp = "^\\d{6}")
     String zipcode;
 
-    @NotBlank
+    @Enumerated(value = EnumType.STRING)
     State state;
 
     @ManyToMany(targetEntity = User.class)
     @NotNull
-    ArrayList<User> user;
+    List<User> user;
 
 }
